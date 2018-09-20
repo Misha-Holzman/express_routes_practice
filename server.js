@@ -22,13 +22,17 @@ app.get('/birds/:id.json', (req, res) => {
 	)
 });
 
-
 app.get('/birds', (req, res) => {
 	res.json(birds)
 });
 
 
 
+// bonus
+app.get('/birds/location/:place', (req, res) => {
+	res.json(birds.filter(bird => bird.city == req.params.place)
+	)
+});
 
 
 
